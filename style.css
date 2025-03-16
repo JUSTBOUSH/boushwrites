@@ -1,19 +1,83 @@
-/* General Styles */
+/* GENERAL STYLING */
 body {
-    font-family: Arial, sans-serif;
+    font-family: Playfair Display, sans-serif;
+    text-align: center; /* Center text content */
     margin: 0;
     padding: 0;
-    background: #f9f9f9;
+    background-color: #f8f9fa; /* Light gray background */
 }
 
-/* Page Title */
+/* NAVIGATION */
+nav {
+    background-color: #333; /* Dark background */
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Makes it horizontal */
+    justify-content: center; /* Centers links */
+}
+
+nav ul li {
+    margin: 0 15px; /* Adds spacing */
+    color: #7D6DB7;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* HEADERS */
 h1 {
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0;
-    color: #333;
+    font-size: 36px;
+    margin-top: 20px;
+    color: #463491;
 }
 
+p {
+    font-size: 18px;
+    color: #7D6DB7;
+}
+
+/* CONTAINER TO CENTER CONTENT */
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 60px;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+body {
+    background-image: url(https://sadhost.neocities.org/images/tiles/move_heart.gif); 
+    background-size: auto; /* Makes it cover the whole screen */
+    background-position: center; /* Centers the image */
+    background-attachment: fixed; /* Makes it stay still while scrolling */
+    background-repeat: repeat; /* Prevents it from repeating */
+}
+html {
+    scroll-behavior: smooth;
+}
+footer {
+    background: none; /* No background */
+    color: #6F6F6F; /* Subtle gray color */
+    text-align: center;
+    font-size: 12px; /* Make it small */
+    padding: 10px 0;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #6F6F6F; /* Match the text color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
 /* Grid Container */
 .grid-container {
     display: grid;
