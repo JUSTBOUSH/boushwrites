@@ -81,24 +81,19 @@ footer a:hover {
 }
 
 /* GRID SYSTEM */
-.writing-container {
-    width: 80%;
-    margin: auto;
-    padding: 20px;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts based on screen size */
     gap: 15px;
-    justify-content: center; /* Centers grid items */
-    align-items: start;
+    justify-content: center;
+    align-items: start; /* Prevents stretching */
 }
 
 /* WRITING BOX */
 .writing-box {
     width: 100%;
     max-width: 400px; /* Keeps it from stretching too much */
+    height: auto; /* Prevents excessive height */
     padding: 15px;
     background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
@@ -112,30 +107,6 @@ footer a:hover {
     background-color: #ddd;
 }
 
-.preview {
-    font-size: 14px;
-    font-weight: bold;
-    color: #333;
-}
-
-.full-writing {
-    display: none;
-    background-color: white;
-    padding: 20px;
-    margin-top: 20px;
-    border-radius: 10px;
-}
-
-/* BUTTON */
-button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border: none;
-    background-color: #888;
-    color: white;
-    cursor: pointer;
-}
-
 /* RESPONSIVE FIX FOR MOBILE */
 @media (max-width: 768px) {
     .grid-container {
@@ -146,5 +117,6 @@ button {
     .writing-box {
         max-width: 90%;
         padding: 15px;
+        height: auto; /* Ensure it doesn't stretch */
     }
 }
