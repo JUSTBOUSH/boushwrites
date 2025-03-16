@@ -68,6 +68,7 @@
     <h1>Arabic Writings</h1>
     <div class="writing-container" id="writingGrid">
        <div class="grid-container">
+    <div class="grid-container">
     <div class="writing-box" onclick="showWriting(1)">Grid 1</div>
     <div class="writing-box" onclick="showWriting(2)">Grid 2</div>
     <div class="writing-box" onclick="showWriting(3)">Grid 3</div>
@@ -81,6 +82,22 @@
     <div class="writing-box" onclick="showWriting(11)">Grid 11</div>
     <div class="writing-box" onclick="showWriting(12)">Grid 12</div>
 </div>
+
+<!-- Hidden writing sections -->
+<div id="full-writing-1" class="full-writing">
+    <button onclick="closeWriting(1)">X</button>
+    <p>Content for Grid 1...</p>
+</div>
+<div id="full-writing-2" class="full-writing">
+    <button onclick="closeWriting(2)">X</button>
+    <p>Content for Grid 2...</p>
+</div>
+<div id="full-writing-3" class="full-writing">
+    <button onclick="closeWriting(3)">X</button>
+    <p>Content for Grid 3...</p>
+</div>
+<!-- Repeat for all grids -->
+
 
 <!-- Hidden writing sections -->
 <div id="full-writing-1" class="full-writing">
@@ -128,9 +145,8 @@
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
-        <script>
 function showWriting(id) {
-    // Hide any currently open writing
+    // Hide any currently visible writings
     let writings = document.querySelectorAll('.full-writing');
     writings.forEach(w => w.style.display = 'none');
 
@@ -141,11 +157,12 @@ function showWriting(id) {
     }
 }
 
-function closeWriting() {
-    let writings = document.querySelectorAll('.full-writing');
-    writings.forEach(w => w.style.display = 'none');
+function closeWriting(id) {
+    let writing = document.getElementById('full-writing-' + id);
+    if (writing) {
+        writing.style.display = 'none';
+    }
 }
-</script>
 
     </script>
 
