@@ -145,3 +145,11 @@ footer a:hover {
     padding: 5px 10px;
     cursor: pointer;
 }
+#textContainer {
+  width: 100%; /* Adjust as needed */
+  height: 400px; /* Adjust as needed */
+  overflow-y: auto; /* Enables vertical scrolling */
+  white-space: pre-wrap; /* Preserves line breaks */
+  padding: 10px;
+  border: 1px solid #ccc; /* Optional, just for visibility */
+}
