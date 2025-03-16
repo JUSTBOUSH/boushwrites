@@ -67,19 +67,31 @@
 
     <h1>Arabic Writings</h1>
     <div class="writing-container" id="writingGrid">
-          <div class="writing-box">Grid 1</div>
-    <div class="writing-box">Grid 2</div>
-    <div class="writing-box">Grid 3</div>
-    <div class="writing-box">Grid 4</div>
-    <div class="writing-box">Grid 5</div>
-    <div class="writing-box">Grid 6</div>
-    <div class="writing-box">Grid 7</div>
-    <div class="writing-box">Grid 8</div>
-    <div class="writing-box">Grid 9</div>
-    <div class="writing-box">Grid 10</div>
-    <div class="writing-box">Grid 11</div>
-    <div class="writing-box">Grid 12</div>
-    </div>
+       <div class="grid-container">
+    <div class="writing-box" onclick="showWriting(1)">Grid 1</div>
+    <div class="writing-box" onclick="showWriting(2)">Grid 2</div>
+    <div class="writing-box" onclick="showWriting(3)">Grid 3</div>
+    <div class="writing-box" onclick="showWriting(4)">Grid 4</div>
+    <div class="writing-box" onclick="showWriting(5)">Grid 5</div>
+    <div class="writing-box" onclick="showWriting(6)">Grid 6</div>
+    <div class="writing-box" onclick="showWriting(7)">Grid 7</div>
+    <div class="writing-box" onclick="showWriting(8)">Grid 8</div>
+    <div class="writing-box" onclick="showWriting(9)">Grid 9</div>
+    <div class="writing-box" onclick="showWriting(10)">Grid 10</div>
+    <div class="writing-box" onclick="showWriting(11)">Grid 11</div>
+    <div class="writing-box" onclick="showWriting(12)">Grid 12</div>
+</div>
+
+<!-- Hidden writing sections -->
+<div id="full-writing-1" class="full-writing">
+    <button onclick="closeWriting()">X</button>
+    <p>Content for Grid 1...</p>
+</div>
+<div id="full-writing-2" class="full-writing">
+    <button onclick="closeWriting()">X</button>
+    <p>Content for Grid 2...</p>
+</div>
+<!-- Repeat for all grids -->
 
     <div class="overlay" id="overlay"></div>
     <div class="popup" id="popup">
