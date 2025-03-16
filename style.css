@@ -91,7 +91,7 @@ footer a:hover {
 .writing-box {
     width: 80%; /* Adjust width as needed */
     max-width: 600px; /* Keeps it from getting too wide */
-    min-height: 100vh;
+    min-height: 10vh; /* Stretches it as long as the screen */
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.9); /* Light background */
     border-radius: 10px; /* Soft edges */
