@@ -68,7 +68,6 @@
     <h1>Arabic Writings</h1>
     <div class="writing-container" id="writingGrid">
        <div class="grid-container">
-    <div class="grid-container">
     <div class="writing-box" onclick="showWriting(1)">Grid 1</div>
     <div class="writing-box" onclick="showWriting(2)">Grid 2</div>
     <div class="writing-box" onclick="showWriting(3)">Grid 3</div>
@@ -88,22 +87,7 @@
     <button onclick="closeWriting(1)">X</button>
     <p>Content for Grid 1...</p>
 </div>
-<div id="full-writing-2" class="full-writing">
-    <button onclick="closeWriting(2)">X</button>
-    <p>Content for Grid 2...</p>
-</div>
-<div id="full-writing-3" class="full-writing">
-    <button onclick="closeWriting(3)">X</button>
-    <p>Content for Grid 3...</p>
-</div>
-<!-- Repeat for all grids -->
 
-
-<!-- Hidden writing sections -->
-<div id="full-writing-1" class="full-writing">
-    <button onclick="closeWriting()">X</button>
-    <p>Content for Grid 1...</p>
-</div>
 <div id="full-writing-2" class="full-writing">
     <button onclick="closeWriting()">X</button>
     <p>Content for Grid 2...</p>
@@ -121,6 +105,8 @@
     <script>
         const writings = [
             { title: "قصيدة ١", content: "أُؤمِن بأنَّك في مكَان ما، تنتظِرِينَ مِثْلِي وَتشتاقِينَ إلَى عَيناي..." },
+            { title: "قصيدة ٢", content: "لو كانت الفرص تُباع لكنتُ اشتريتها كلّها و أنفقتها على حُبّنا..." }
+             { title: "قصيدة ١", content: "أُؤمِن بأنَّك في مكَان ما، تنتظِرِينَ مِثْلِي وَتشتاقِينَ إلَى عَيناي..." },
             { title: "قصيدة ٢", content: "لو كانت الفرص تُباع لكنتُ اشتريتها كلّها و أنفقتها على حُبّنا..." }
         ];
 
