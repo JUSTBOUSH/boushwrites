@@ -217,6 +217,51 @@
     function closeWriting() {
         document.querySelectorAll(".full-writing").forEach(el => el.style.display = "none");
     }
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Writings</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Arabic Writings</h1>
+    
+    <div class="grid-container">
+        <div class="grid-item" onclick="openModal('poem1')">أُؤمِن بأنَّك في مكَان ما...</div>
+        <div class="grid-item" onclick="openModal('poem2')">لو كانت الفرص تُباع لكنتُ اشتريتها...</div>
+        <div class="grid-item" onclick="openModal('poem3')">هنا نص ثالث إن وجد...</div>
+        <!-- Add more items as needed -->
+    </div>
+
+    <!-- Modal Window -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <script>
+        function openModal(poemId) {
+            let poems = {
+                "poem1": `أُؤمِن بأنَّك في مكَان ما، تنتظِرِينَ مِثْلِي وَتشتاقِينَ إلَى عَيناي...`,
+                "poem2": `لو كانت الفرص تُباع لكنتُ اشتريتها كلّها و أنفقتها على حُبّنا...`,
+                "poem3": `هنا نص ثالث إن وجد...`
+            };
+            document.getElementById("modal-text").innerHTML = poems[poemId];
+            document.getElementById("modal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
 
 </body>
 </html>
