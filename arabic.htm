@@ -1,156 +1,138 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arabic Writings | JustBoush</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
+    <title>Arabic Writings</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        .writing-container {
+        /* Grid Layout */
+        .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            max-width: 900px;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns on desktop */
+            gap: 10px;
+            max-width: 800px;
             margin: auto;
-            padding: 20px;
         }
-        .writing-box {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+
+        .grid-item {
+            background: #ddd;
+            padding: 15px;
+            text-align: center;
             cursor: pointer;
+            border-radius: 8px;
             transition: 0.3s;
         }
-        .writing-box:hover {
-            background-color: #e3e3e3;
+
+        .grid-item:hover {
+            background: #bbb;
         }
-        .popup {
-            display: none;
+
+        /* Poem Popup */
+        .poem-popup {
+            display: none; /* Hidden by default */
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-            width: 80%;
+            width: 90%;
             max-width: 500px;
-            text-align: right;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
             z-index: 1000;
+            text-align: center;
+            border-radius: 10px;
         }
-        .popup .close {
+
+        /* Close Button */
+        .close-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 10px;
             cursor: pointer;
-            color: red;
-            font-size: 20px;
-            text-align: left;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border-radius: 50%;
         }
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
+
+        .close-btn:hover {
+            background: darkred;
+        }
+
+        /* Responsive Grid */
+        @media (max-width: 768px) { 
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) { 
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
     </style>
 </head>
 <body>
 
+<div class="writing-box">
     <h1>Arabic Writings</h1>
-    <div class="writing-container" id="writingGrid">
-       <div class="grid-container">
-    <div class="writing-box" onclick="showWriting(1)">Grid 1</div>
-    <div class="writing-box" onclick="showWriting(2)">Grid 2</div>
-    <div class="writing-box" onclick="showWriting(3)">Grid 3</div>
-    <div class="writing-box" onclick="showWriting(4)">Grid 4</div>
-    <div class="writing-box" onclick="showWriting(5)">Grid 5</div>
-    <div class="writing-box" onclick="showWriting(6)">Grid 6</div>
-    <div class="writing-box" onclick="showWriting(7)">Grid 7</div>
-    <div class="writing-box" onclick="showWriting(8)">Grid 8</div>
-    <div class="writing-box" onclick="showWriting(9)">Grid 9</div>
-    <div class="writing-box" onclick="showWriting(10)">Grid 10</div>
-    <div class="writing-box" onclick="showWriting(11)">Grid 11</div>
-    <div class="writing-box" onclick="showWriting(12)">Grid 12</div>
+    
+    <!-- Grid Items -->
+    <div class="grid-container">
+        <div class="grid-item" onclick="showPoem(1)">Poem 1</div>
+        <div class="grid-item" onclick="showPoem(2)">Poem 2</div>
+        <div class="grid-item" onclick="showPoem(3)">Poem 3</div>
+        <div class="grid-item" onclick="showPoem(4)">Poem 4</div>
+        <div class="grid-item" onclick="showPoem(5)">Poem 5</div>
+        <div class="grid-item" onclick="showPoem(6)">Poem 6</div>
+        <div class="grid-item" onclick="showPoem(7)">Poem 7</div>
+        <div class="grid-item" onclick="showPoem(8)">Poem 8</div>
+        <div class="grid-item" onclick="showPoem(9)">Poem 9</div>
+        <div class="grid-item" onclick="showPoem(10)">Poem 10</div>
+        <div class="grid-item" onclick="showPoem(11)">Poem 11</div>
+        <div class="grid-item" onclick="showPoem(12)">Poem 12</div>
+    </div>
+
+    <!-- Poem Content Popup -->
+    <div id="poem-display" class="poem-popup">
+        <div class="poem-content">
+            <button class="close-btn" onclick="closePoem()">X</button>
+            <p id="poem-text">Poem content will appear here...</p>
+        </div>
+    </div>
 </div>
 
-<!-- Hidden writing sections -->
-<div id="full-writing-1" class="full-writing">
-    <button onclick="closeWriting(1)">X</button>
-    <p>Content for Grid 1...</p>
-</div>
+<script>
+    // Poem Content Data
+    const poems = {
+        1: "This is the content for Poem 1...",
+        2: "This is the content for Poem 2...",
+        3: "This is the content for Poem 3...",
+        4: "This is the content for Poem 4...",
+        5: "This is the content for Poem 5...",
+        6: "This is the content for Poem 6...",
+        7: "This is the content for Poem 7...",
+        8: "This is the content for Poem 8...",
+        9: "This is the content for Poem 9...",
+        10: "This is the content for Poem 10...",
+        11: "This is the content for Poem 11...",
+        12: "This is the content for Poem 12..."
+    };
 
-<div id="full-writing-2" class="full-writing">
-    <button onclick="closeWriting()">X</button>
-    <p>Content for Grid 2...</p>
-</div>
-<!-- Repeat for all grids -->
-
-    <div class="overlay" id="overlay"></div>
-    <div class="popup" id="popup">
-        <span class="close" onclick="closePopup()">✖</span>
-        <h2 id="popupTitle"></h2>
-        <p id="popupContent"></p>
-        <div class="grid-container">
-  
-
-    <script>
-        const writings = [
-            { title: "قصيدة ١", content: "أُؤمِن بأنَّك في مكَان ما، تنتظِرِينَ مِثْلِي وَتشتاقِينَ إلَى عَيناي..." },
-            { title: "قصيدة ٢", content: "لو كانت الفرص تُباع لكنتُ اشتريتها كلّها و أنفقتها على حُبّنا..." }
-             { title: "قصيدة ١", content: "أُؤمِن بأنَّك في مكَان ما، تنتظِرِينَ مِثْلِي وَتشتاقِينَ إلَى عَيناي..." },
-            { title: "قصيدة ٢", content: "لو كانت الفرص تُباع لكنتُ اشتريتها كلّها و أنفقتها على حُبّنا..." }
-        ];
-
-        const grid = document.getElementById("writingGrid");
-
-        writings.forEach((writing, index) => {
-            let box = document.createElement("div");
-            box.classList.add("writing-box");
-            box.textContent = writing.title;
-            box.onclick = () => openPopup(index);
-            grid.appendChild(box);
-        });
-
-        function openPopup(index) {
-            document.getElementById("popupTitle").textContent = writings[index].title;
-            document.getElementById("popupContent").textContent = writings[index].content;
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-        }
-function showWriting(id) {
-    // Hide any currently visible writings
-    let writings = document.querySelectorAll('.full-writing');
-    writings.forEach(w => w.style.display = 'none');
-
-    // Show the selected writing
-    let writing = document.getElementById('full-writing-' + id);
-    if (writing) {
-        writing.style.display = 'block';
+    // Show Poem
+    function showPoem(number) {
+        document.getElementById("poem-text").innerHTML = poems[number];
+        document.getElementById("poem-display").style.display = "block";
     }
-}
 
-function closeWriting(id) {
-    let writing = document.getElementById('full-writing-' + id);
-    if (writing) {
-        writing.style.display = 'none';
+    // Close Poem
+    function closePoem() {
+        document.getElementById("poem-display").style.display = "none";
     }
-}
-
-    </script>
+</script>
 
 </body>
 </html>
