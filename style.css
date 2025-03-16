@@ -78,45 +78,151 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-/* Grid Container */
+.writing-box {
+    width: 80%; /* Adjust width as needed */
+    max-width: 900px; /* Optional: limits how wide it gets */
+    min-height: 100vh; /* Makes it at least the full height of the screen */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background */
+    border-radius: 10px; /* Soft edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+    overflow-y: auto; /* Enables scrolling inside if needed */
+}
+.writing-box {
+    width: 80%; /* Adjust width as needed */
+    max-width: 600px; /* Keeps it from getting too wide */
+    min-height: 100vh; /* Stretches it as long as the screen */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background */
+    border-radius: 10px; /* Soft edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+
+    /* CENTERING */
+    margin: 0 auto; /* Centers it horizontally */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+body {
+    font-family: Arial, sans-serif;
+    direction: rtl;
+    text-align: center;
+}
+
+.writing-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
     gap: 10px;
+}
+
+.writing-box {
+    background-color: #f4f4f4;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.writing-box:hover {
+    background-color: #ddd;
+}
+
+.preview {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.full-writing {
+    display: none;
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    background-color: #888;
+    color: white;
+    cursor: pointer;
+}
+.writing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Creates 3 squares per row */
+    gap: 15px; /* Adds space between squares */
     padding: 20px;
     justify-content: center;
-    max-width: 400px; /* Ensures a good layout */
-    margin: auto;
 }
 
-}
-
-/* Individual Grid Items */
-.grid-item {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
+.writing-item {
+    background-color: #f8f8f8;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
     text-align: center;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100px;
-    height: 100px;
+    height: 150px; /* Make it a square */
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: transform 0.2s ease-in-out, background 0.2s;
-    overflow: hidden;
+    overflow: hidden; /* Hide overflowing text */
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Hover Effect */
+.writing-item:hover {
+    background-color: #eee;
+}
+
+.writing-item p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+/* Mobile view: Make sure squares don’t stick together */
+@media (max-width: 600px) {
+    .writing-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 squares per row on mobile */
+    }
+}
+/* Grid Styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 squares per row */
+    gap: 10px;
+    padding: 20px;
+}
+
+.grid-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100px; /* Ensure they are squares */
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
 .grid-item:hover {
     background: #f5f5f5;
-    transform: scale(1.05);
 }
 
-/* Modal (Hidden by Default) */
+/* Modal Styling */
 .modal {
     display: none;
     position: fixed;
@@ -125,63 +231,26 @@ footer a:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0,0,0,0.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
-/* Modal Content */
 .modal-content {
     background: white;
     padding: 20px;
-    width: 80%;
+    width: 60%;
     max-width: 600px;
-    border-radius: 12px;
+    border-radius: 8px;
     text-align: center;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    position: relative;
-    max-height: 80vh;
-    overflow-y: auto;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
 }
 
-/* Close Button */
 .close {
     position: absolute;
-    right: 15px;
+    right: 20px;
     top: 10px;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 30px;
     cursor: pointer;
-    color: #333;
-    background: none;
-    border: none;
-}
-
-.close:hover {
-    color: red;
-}
-
-/* Mobile Optimization */
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 5px;
-    }
-
-    .grid-item {
-        width: 80px;
-        height: 80px;
-        font-size: 14px;
-    }
-
-    .modal-content {
-        width: 95%;
-        max-height: 85vh;
-    }
-
-    .close {
-        font-size: 32px;
-    }
 }
