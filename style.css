@@ -117,8 +117,8 @@ body {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columns */
-    gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column size */
+  gap: 10px; /* Spacing between items */
 }
 
 .writing-box {
