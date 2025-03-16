@@ -77,31 +77,104 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-.writing-box {
-    width: 80%; /* Adjust width as needed */
-    max-width: 900px; /* Optional: limits how wide it gets */
-    min-height: 100vh; /* Makes it at least the full height of the screen */
+/* Grid Styling */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+    gap: 10px;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Light background */
-    border-radius: 10px; /* Soft edges */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
-    overflow-y: auto; /* Enables scrolling inside if needed */
+    justify-content: center;
 }
-.writing-box {
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Keeps it from getting too wide */
-    min-height: 100vh; /* Stretches it as long as the screen */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Light background */
-    border-radius: 10px; /* Soft edges */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
 
-    /* CENTERING */
-    margin: 0 auto; /* Centers it horizontally */
+.grid-item {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100px; /* Ensure they are squares */
+    height: 100px;
+    overflow: hidden;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: transform 0.2s ease-in-out;
 }
-body {
-  
+
+.grid-item:hover {
+    background: #f5f5f5;
+    transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Modal Content - Centered and Responsive */
+.modal-content {
+    background: white;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 80vh; /* Prevents too much height on mobile */
+    overflow-y: auto;
+}
+
+/* Larger Close Button */
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    background: none;
+    border: none;
+}
+
+.close:hover {
+    color: red;
+}
+
+/* Mobile Optimization */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 95%; /* Full width for smaller screens */
+        max-height: 85vh; /* Ensures it doesn’t take too much space */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr); /* Keep 3 per row */
+        gap: 5px;
+    }
+
+    .grid-item {
+        width: 80px; /* Make them slightly smaller */
+        height: 80px;
+        font-size: 14px;
+    }
+
+    .close {
+        font-size: 32px; /* Bigger close button */
+    }
+}
