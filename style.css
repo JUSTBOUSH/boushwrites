@@ -1,27 +1,36 @@
 /* GENERAL STYLING */
 body {
     font-family: Playfair Display, sans-serif;
-    text-align: center; /* Center text content */
+    text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light gray background */
+    background-color: #f8f9fa;
+    background-image: url(https://sadhost.neocities.org/images/tiles/move_heart.gif); 
+    background-size: auto;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 /* NAVIGATION */
 nav {
-    background-color: #333; /* Dark background */
+    background-color: #333;
     padding: 10px 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex; /* Makes it horizontal */
-    justify-content: center; /* Centers links */
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    margin: 0 15px; /* Adds spacing */
+    margin: 0 15px;
     color: #7D6DB7;
 }
 
@@ -51,64 +60,27 @@ p {
     background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
-body {
-    background-image: url(https://sadhost.neocities.org/images/tiles/move_heart.gif); 
-    background-size: auto; /* Makes it cover the whole screen */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Makes it stay still while scrolling */
-    background-repeat: repeat; /* Prevents it from repeating */
-}
-html {
-    scroll-behavior: smooth;
-}
+
+/* FOOTER */
 footer {
-    background: none; /* No background */
-    color: #6F6F6F; /* Subtle gray color */
+    background: none;
+    color: #6F6F6F;
     text-align: center;
-    font-size: 12px; /* Make it small */
+    font-size: 12px;
     padding: 10px 0;
     margin-top: 30px;
 }
 
 footer a {
-    color: #6F6F6F; /* Match the text color */
+    color: #6F6F6F;
     text-decoration: none;
 }
 
 footer a:hover {
     text-decoration: underline;
 }
-.writing-box {
-    width: 80%; /* Adjust width as needed */
-     max-width: 800px; /* Ensures the grid doesn't stretch too wide */
-    min-height: 100vh; /* Makes it at least the full height of the screen */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Light background */
-    border-radius: 10px; /* Soft edges */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
-    overflow-y: auto; /* Enables scrolling inside if needed */
-}
-.writing-box {
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Keeps it from getting too wide */
-    min-height: 100vh; /* Stretches it as long as the screen */
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Light background */
-    border-radius: 10px; /* Soft edges */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a shadow */
 
-    /* CENTERING */
-    margin: 0 auto; /* Centers it horizontally */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-body {
-    font-family: Arial, sans-serif;
-    direction: rtl;
-    text-align: center;
-}
-
+/* GRID SYSTEM */
 .writing-container {
     width: 80%;
     margin: auto;
@@ -117,16 +89,23 @@ body {
 
 .grid-container {
     display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust column size */
-  gap: 10px; /* Spacing between items */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusts based on screen size */
+    gap: 15px;
+    justify-content: center; /* Centers grid items */
+    align-items: start;
 }
 
+/* WRITING BOX */
 .writing-box {
-    background-color: #f4f4f4;
+    width: 100%;
+    max-width: 400px; /* Keeps it from stretching too much */
     padding: 15px;
-    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
     transition: 0.3s;
+    text-align: center;
 }
 
 .writing-box:hover {
@@ -147,6 +126,7 @@ body {
     border-radius: 10px;
 }
 
+/* BUTTON */
 button {
     margin-top: 10px;
     padding: 8px 12px;
@@ -154,4 +134,17 @@ button {
     background-color: #888;
     color: white;
     cursor: pointer;
+}
+
+/* RESPONSIVE FIX FOR MOBILE */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Makes a single column grid on small screens */
+        gap: 10px;
+    }
+
+    .writing-box {
+        max-width: 90%;
+        padding: 15px;
+    }
 }
