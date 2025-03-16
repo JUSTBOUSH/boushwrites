@@ -91,7 +91,6 @@ footer a:hover {
 
 /* WRITING BOX */
 .writing-box {
-.popup {
     display: none;
     position: fixed;
     top: 50%;
@@ -108,7 +107,6 @@ footer a:hover {
     text-align: right;
     z-index: 1000;
     direction: rtl;
-}
 }
 
 .writing-box:hover {
