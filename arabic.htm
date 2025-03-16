@@ -74,7 +74,7 @@
         <h2 id="popupTitle"></h2>
         <p id="popupContent"></p>
     </div>
-<div id="textContainer"></div>
+
     <script>
         const writings = [
             { title: "12/0", content: `أُؤمِن بأنَّك في مكَان ما،
@@ -104,9 +104,9 @@
 و سأَعودُ أنَا وَحدِي لِأوَاجِه وَاقِعِي المُؤلِم وَ هَذَا العَالَم المُضنِي الذِي يَخْلُو منْكِ، ليَومٍ آخَر بعد.
 
 بقلمي ♡` },
-            { title: "2", content: "..." },
-            { title: "3", content: "..." },
-            { title: "4", content: "..." }
+            { title: "قصيدة ٢", content: "لو كانت الفرص تُباع لكنتُ اشتريتها كلّها و أنفقتها على حُبّنا..." },
+            { title: "قصيدة ٣", content: "حروف كتبتها في ظلمة الليل، حيث لا يسمعني أحد إلا الورق..." },
+            { title: "قصيدة ٤", content: "كلما اشتقت إليك، سافرت روحي إلى حيث كنا..." }
         ];
 
         const grid = document.getElementById("writingGrid");
@@ -130,7 +130,6 @@
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
-        document.getElementById("textContainer").innerText = myText;
     </script>
 
 </body>
