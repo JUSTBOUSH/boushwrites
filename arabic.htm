@@ -7,7 +7,168 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabic Writings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
+            text-align: center;
+            background-color: #f8f8f8;
+            margin: 20px;
+        }
 
+        .writing-container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 columns */
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .writing-box {
+            background-color: white;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            min-height: 80px; /* Ensures uniform size */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .writing-box:hover {
+            background-color: #e0e0e0;
+        }
+
+        .full-writing {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 8px 12px;
+            border: none;
+            background-color: #888;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grid-container {
+                grid-template-columns: repeat(1, 1fr); /* 1 column on very small screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="writing-container">
+    <h1>مكتبتي العربية</h1>
+
+    <div class="grid-container">
+        <!-- Writing 1 -->
+        <div class="writing-box" onclick="openWriting('writing1')">
+            أُؤمِن بأنَّك في مكَان ما...
+        </div>
+
+        <!-- Writing 2 -->
+        <div class="writing-box" onclick="openWriting('writing2')">
+            لو كانت الفرص تُباع لكنتُ اشتريتها...
+        </div>
+
+        <!-- Writing 3 -->
+        <div class="writing-box" onclick="openWriting('writing3')">
+            حبّنا كان كالموجة العالية...
+        </div>
+
+        <!-- Writing 4 -->
+        <div class="writing-box" onclick="openWriting('writing4')">
+            الليالي الطويلة تُخبرني...
+        </div>
+
+        <!-- Writing 5 -->
+        <div class="writing-box" onclick="openWriting('writing5')">
+            الغياب يترك أثراً لا يُمحى...
+        </div>
+
+        <!-- Writing 6 -->
+        <div class="writing-box" onclick="openWriting('writing6')">
+            في زوايا الذاكرة هناك...
+        </div>
+    </div>
+
+    <!-- Full writings (hidden by default) -->
+    <div id="writing1" class="full-writing">
+        <p>أُؤمِن بأنَّك في مكَان ما، تنتظِرِينَ مِثْلِي، تحت سماءٍ مُختلفةٍ لكن بنفس المشاعر...</p>
+        <button class="close-btn" onclick="closeWriting()">إغلاق</button>
+    </div>
+
+    <div id="writing2" class="full-writing">
+        <p>لو كانت الفرص تُباع لكنتُ اشتريتها كلّها، وأهديتك فرصة واحدة كي نبقى معاً...</p>
+        <button class="close-btn" onclick="closeWriting()">إغلاق</button>
+    </div>
+
+    <div id="writing3" class="full-writing">
+        <p>حبّنا كان كالموجة العالية، لم يُكتب له السكون أبداً، لكنّه لم ينكسر...</p>
+        <button class="close-btn" onclick="closeWriting()">إغلاق</button>
+    </div>
+
+    <div id="writing4" class="full-writing">
+        <p>الليالي الطويلة تُخبرني أنني لا زلت أُحبك، رغم كل شيء...</p>
+        <button class="close-btn" onclick="closeWriting()">إغلاق</button>
+    </div>
+
+    <div id="writing5" class="full-writing">
+        <p>الغياب يترك أثراً لا يُمحى، لكن الذكريات تعيد رسم الوجوه...</p>
+        <button class="close-btn" onclick="closeWriting()">إغلاق</button>
+    </div>
+
+    <div id="writing6" class="full-writing">
+        <p>في زوايا الذاكرة هناك دائماً ظلّك، يرفض المغادرة...</p>
+        <button class="close-btn" onclick="closeWriting()">إغلاق</button>
+    </div>
+
+</div>
+
+<script>
+    function openWriting(id) {
+        document.querySelectorAll('.full-writing').forEach(el => el.style.display = 'none'); // Hide all first
+        document.getElementById(id).style.display = "block"; // Show the clicked one
+    }
+
+    function closeWriting() {
+        document.querySelectorAll('.full-writing').forEach(el => el.style.display = 'none');
+    }
+</script>
+
+</body>
+</html>
 <div class="writing-container">
     <h1>Arabic Writings</h1>
 
