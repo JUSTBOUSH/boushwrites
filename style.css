@@ -1,115 +1,56 @@
-/* GENERAL STYLING */
+/* General Styles */
 body {
-    font-family: Playfair Display, sans-serif;
-    text-align: center; /* Center text content */
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light gray background */
+    background: #f9f9f9;
 }
 
-/* NAVIGATION */
-nav {
-    background-color: #333; /* Dark background */
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex; /* Makes it horizontal */
-    justify-content: center; /* Centers links */
-}
-
-nav ul li {
-    margin: 0 15px; /* Adds spacing */
-    color: #7D6DB7;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* HEADERS */
+/* Page Title */
 h1 {
-    font-size: 36px;
-    margin-top: 20px;
-    color: #463491;
-}
-
-p {
-    font-size: 18px;
-    color: #7D6DB7;
-}
-
-/* CONTAINER TO CENTER CONTENT */
-.container {
-    max-width: 800px;
-    margin: auto;
-    padding: 60px;
-    background: white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-}
-body {
-    background-image: url(https://sadhost.neocities.org/images/tiles/move_heart.gif); 
-    background-size: auto; /* Makes it cover the whole screen */
-    background-position: center; /* Centers the image */
-    background-attachment: fixed; /* Makes it stay still while scrolling */
-    background-repeat: repeat; /* Prevents it from repeating */
-}
-html {
-    scroll-behavior: smooth;
-}
-footer {
-    background: none; /* No background */
-    color: #6F6F6F; /* Subtle gray color */
     text-align: center;
-    font-size: 12px; /* Make it small */
-    padding: 10px 0;
-    margin-top: 30px;
+    font-size: 24px;
+    margin: 20px 0;
+    color: #333;
 }
 
-footer a {
-    color: #6F6F6F; /* Match the text color */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-/* Grid Styling */
+/* Grid Container */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 10px;
     padding: 20px;
     justify-content: center;
+    max-width: 900px;
+    margin: auto;
 }
 
+/* Individual Grid Items */
 .grid-item {
     background: #fff;
     border: 1px solid #ddd;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
     cursor: pointer;
-    font-size: 18px;
-    width: 100px; /* Ensure they are squares */
+    font-size: 16px;
+    width: 100px;
     height: 100px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    transition: transform 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background 0.2s;
+    overflow: hidden;
 }
 
+/* Hover Effect */
 .grid-item:hover {
     background: #f5f5f5;
     transform: scale(1.05);
 }
 
-/* Modal Styling */
+/* Modal (Hidden by Default) */
 .modal {
     display: none;
     position: fixed;
@@ -125,7 +66,7 @@ footer a:hover {
     padding: 20px;
 }
 
-/* Modal Content - Centered and Responsive */
+/* Modal Content */
 .modal-content {
     background: white;
     padding: 20px;
@@ -135,11 +76,11 @@ footer a:hover {
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     position: relative;
-    max-height: 80vh; /* Prevents too much height on mobile */
+    max-height: 80vh;
     overflow-y: auto;
 }
 
-/* Larger Close Button */
+/* Close Button */
 .close {
     position: absolute;
     right: 15px;
@@ -158,23 +99,23 @@ footer a:hover {
 
 /* Mobile Optimization */
 @media (max-width: 600px) {
-    .modal-content {
-        width: 95%; /* Full width for smaller screens */
-        max-height: 85vh; /* Ensures it doesn’t take too much space */
-    }
-
     .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Keep 3 per row */
+        grid-template-columns: repeat(3, 1fr);
         gap: 5px;
     }
 
     .grid-item {
-        width: 80px; /* Make them slightly smaller */
+        width: 80px;
         height: 80px;
         font-size: 14px;
     }
 
+    .modal-content {
+        width: 95%;
+        max-height: 85vh;
+    }
+
     .close {
-        font-size: 32px; /* Bigger close button */
+        font-size: 32px;
     }
 }
