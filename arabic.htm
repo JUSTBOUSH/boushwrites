@@ -128,6 +128,25 @@
             document.getElementById("popup").style.display = "none";
             document.getElementById("overlay").style.display = "none";
         }
+        <script>
+function showWriting(id) {
+    // Hide any currently open writing
+    let writings = document.querySelectorAll('.full-writing');
+    writings.forEach(w => w.style.display = 'none');
+
+    // Show the selected writing
+    let writing = document.getElementById('full-writing-' + id);
+    if (writing) {
+        writing.style.display = 'block';
+    }
+}
+
+function closeWriting() {
+    let writings = document.querySelectorAll('.full-writing');
+    writings.forEach(w => w.style.display = 'none');
+}
+</script>
+
     </script>
 
 </body>
