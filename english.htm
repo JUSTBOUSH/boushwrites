@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,11 +43,10 @@
             width: 80%;
             max-width: 500px;
             text-align: right;
-            z-index: 1000;                                                                                     
-    max-height: 80vh; /* Prevents overflow */
-    overflow-y: auto; /* Enables scrolling */
+            z-index: 1000;
+            max-height: 80vh;
+            overflow-y: auto;
         }
-        
         .popup .close {
             cursor: pointer;
             color: red;
@@ -80,48 +79,9 @@
         
     <script>
         const writings = [
-            { title: ".", content: `أُ0` },
-            { title: "•", content: `
-   },  
+            { title: "0", content: "..." },
+            { title: "L", content: "..." },
+            { title: "D", content: ".." }
+        ];
 
-        
-            { title: "•", content: `
----
-` },
-            { title: "0", content:   ];
-
-        const grid = document.getElementById("writingGrid");
-
-        writings.forEach((writing, index) => {
-            let box = document.createElement("div");
-            box.classList.add("writing-box");
-            box.textContent = writing.title;
-            box.onclick = () => openPopup(index);
-            grid.appendChild(box);
-        });
-
-        function openPopup(index) {
-            document.getElementById("popupTitle").textContent = writings[index].title;
-            document.getElementById("popupContent").textContent = writings[index].content;
-            document.getElementById("popup").style.display = "block";
-            document.getElementById("overlay").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popup").style.display = "none";
-            document.getElementById("overlay").style.display = "none";
-        }
-    </script>
-
-
-</html>
-
-
-<script type="text/javascript">
-var sc_project=13097510; 
-var sc_invisible=1; 
-var sc_security="7228a69f"; 
-</script>
-<script type="text/javascript"
-</body>
-</html>
+        const grid = document.getElem
