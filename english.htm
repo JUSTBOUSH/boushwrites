@@ -1,13 +1,127 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="ar">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The web site of justboush</title>
-    <!-- The style.css file allows you to change the look of your web pages.
-         If you include the next line in all your web pages, they will all share the same look.
-         This makes it easier to make new pages for your site. -->
-    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
-  </head>
-  </body>
+    <title>Arabic Writings | JustBoush</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .writing-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .writing-box {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .writing-box:hover {
+            background-color: #e3e3e3;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 500px;
+            text-align: right;
+            z-index: 1000;                                                                                     
+    max-height: 80vh; /* Prevents overflow */
+    overflow-y: auto; /* Enables scrolling */
+        }
+        
+        .popup .close {
+            cursor: pointer;
+            color: red;
+            font-size: 20px;
+            text-align: left;
+        }
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>ENGLISH Writings</h1>
+    <div class="writing-container" id="writingGrid"></div>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="popup" id="popup">
+        <span class="close" onclick="closePopup()">✖</span>
+        <h2 id="popupTitle"></h2>
+        <p id="popupContent"></p>
+    </div>
+        
+    <script>
+        const writings = [
+            { title: ".", content: `أُ0` },
+            { title: "•", content: `
+   },  
+
+        
+            { title: "•", content: `
+---
+` },
+            { title: "0", content:   ];
+
+        const grid = document.getElementById("writingGrid");
+
+        writings.forEach((writing, index) => {
+            let box = document.createElement("div");
+            box.classList.add("writing-box");
+            box.textContent = writing.title;
+            box.onclick = () => openPopup(index);
+            grid.appendChild(box);
+        });
+
+        function openPopup(index) {
+            document.getElementById("popupTitle").textContent = writings[index].title;
+            document.getElementById("popupContent").textContent = writings[index].content;
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
+https://justboush.github.io/boushwrites/arabic.htm -->
+<script type="text/javascript">
+var sc_project=13097510; 
+var sc_invisible=1; 
+var sc_security="7228a69f"; 
+</script>
+<script type="text/javascript"
+
 </html>
