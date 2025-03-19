@@ -77,7 +77,9 @@
         <h2 id="popupTitle"></h2>
         <p id="popupContent"></p>
     </div>
-
+ <h1>قصيدة ٢</h1>
+    <pre id="poemDisplay"></pre> <!-- Where the poem will appear -->
+        
     <script>
         const writings = [
             { title: "12/0", content: `أُؤمِن بأنَّك في مكَان ما،
@@ -132,7 +134,10 @@
         ربما هو طيفك أو ذكراك،\n
         لكنّني أحب أن أؤمن أنه جزء من روحِك،\n
         روحك التي أعشق.`
-   },
+   },  
+            // Insert the poem into the page
+        document.getElementById("poemDisplay").innerText = poem;
+        
             { title: "قصيدة ٣", content: "حروف كتبتها في ظلمة الليل، حيث لا يسمعني أحد إلا الورق..." },
             { title: "قصيدة ٤", content: "كلما اشتقت إليك، سافرت روحي إلى حيث كنا..." }
         ];
