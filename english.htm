@@ -84,4 +84,28 @@
             { title: "D", content: ".." }
         ];
 
-        const grid = document.getElem
+   const grid = document.getElementById("writingGrid");
+
+        writings.forEach((writing, index) => {
+            let box = document.createElement("div");
+            box.classList.add("writing-box");
+            box.textContent = writing.title;
+            box.onclick = () => openPopup(index);
+            grid.appendChild(box);
+        });
+
+        function openPopup(index) {
+            document.getElementById("popupTitle").textContent = writings[index].title;
+            document.getElementById("popupContent").textContent = writings[index].content;
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("overlay").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
