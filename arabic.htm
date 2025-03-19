@@ -43,8 +43,11 @@
             width: 80%;
             max-width: 500px;
             text-align: right;
-            z-index: 1000;
+            z-index: 1000;                                                                                     
+    max-height: 80vh; /* Prevents overflow */
+    overflow-y: auto; /* Enables scrolling */
         }
+        
         .popup .close {
             cursor: pointer;
             color: red;
